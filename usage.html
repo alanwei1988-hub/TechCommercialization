@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>技术商业化分析 Skill 使用说明</title>
+  <style>
+    :root {
+      --ink: #182033;
+      --muted: #667085;
+      --line: #d8e1ec;
+      --paper: #ffffff;
+      --bg: #f5f7fb;
+      --navy: #16324f;
+      --blue: #2e67a5;
+      --teal: #0d7c78;
+      --green: #2f7d32;
+      --amber: #b7791f;
+      --soft-blue: #eaf2fb;
+      --soft-green: #eaf6ef;
+      --soft-amber: #fff4de;
+      --code: #101828;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Microsoft YaHei", "PingFang SC", "Segoe UI", Arial, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+
+    header {
+      background: var(--navy);
+      color: #fff;
+      padding: 42px 28px 34px;
+    }
+
+    .wrap {
+      max-width: 1180px;
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) 340px;
+      gap: 34px;
+      align-items: center;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: 34px;
+      letter-spacing: 0;
+    }
+
+    header p {
+      margin: 0;
+      color: #dce8f6;
+      font-size: 16px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .hero-card strong {
+      display: block;
+      color: #fff;
+      margin-bottom: 8px;
+    }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #ffffff;
+      border-bottom: 1px solid var(--line);
+    }
+
+    nav .wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 10px 28px;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 14px;
+      background: #fff;
+    }
+
+    main {
+      padding: 26px 28px 54px;
+    }
+
+    section {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 24px;
+      margin: 18px 0;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      color: var(--navy);
+      font-size: 22px;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin: 0 0 8px;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    .cards {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 15px;
+      background: #fff;
+    }
+
+    .card .label {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .card strong {
+      display: block;
+      color: var(--teal);
+      font-size: 17px;
+      margin-bottom: 4px;
+    }
+
+    .two {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    .note {
+      border-left: 4px solid var(--amber);
+      background: var(--soft-amber);
+      padding: 12px 14px;
+      border-radius: 6px;
+      color: #4d3b18;
+    }
+
+    .prompt {
+      background: var(--code);
+      color: #e8edf7;
+      border-radius: 8px;
+      padding: 14px 16px;
+      overflow-x: auto;
+      font-family: Consolas, "SFMono-Regular", Menlo, monospace;
+      font-size: 14px;
+      white-space: pre-wrap;
+    }
+
+    .flow {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .step {
+      border: 1px solid var(--line);
+      background: var(--soft-blue);
+      border-radius: 8px;
+      padding: 13px;
+      min-height: 116px;
+    }
+
+    .step .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: var(--blue);
+      color: #fff;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+    }
+
+    th,
+    td {
+      text-align: left;
+      vertical-align: top;
+      padding: 10px 9px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: var(--soft-blue);
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .tag {
+      display: inline-block;
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-size: 12px;
+      font-weight: 700;
+      background: var(--soft-green);
+      color: var(--green);
+      margin-right: 6px;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    footer {
+      color: var(--muted);
+      padding: 0 28px 30px;
+      text-align: center;
+      font-size: 13px;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .two,
+      .cards,
+      .flow {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 28px;
+      }
+
+      section {
+        padding: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap hero">
+      <div>
+        <h1>技术商业化分析 Skill 使用说明</h1>
+        <p>从学者姓名出发，形成论文成果梳理、商业化判断、国内外商业化公司对标，以及技术经理人访谈问题清单。</p>
+      </div>
+      <div class="hero-card">
+        <strong>Skill 名称</strong>
+        <code>professor-commercialization-research</code>
+        <p class="muted">也可以直接用中文说“技术商业化分析skill”唤醒。</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="wrap">
+      <a href="#when">适用场景</a>
+      <a href="#invoke">唤醒方式</a>
+      <a href="#input">推荐输入</a>
+      <a href="#workflow">工作流程</a>
+      <a href="#deliverables">交付物</a>
+      <a href="#style">输出风格</a>
+      <a href="#limits">注意事项</a>
+    </div>
+  </nav>
+
+  <main class="wrap">
+    <section id="when">
+      <h2>适用场景</h2>
+      <div class="grid cards">
+        <div class="card">
+          <strong>科研画像</strong>
+          <div class="label">快速了解某位学者近十年的研究方向、代表成果和关键节点。</div>
+        </div>
+        <div class="card">
+          <strong>商业判断</strong>
+          <div class="label">判断论文或研究方向是否有产品化、公司化或技术转移机会。</div>
+        </div>
+        <div class="card">
+          <strong>对标扫描</strong>
+          <div class="label">比较国内外商业化公司、平台替代、开源替代和市场空白。</div>
+        </div>
+        <div class="card">
+          <strong>访谈准备</strong>
+          <div class="label">形成技术经理人与学者访谈前的研究底稿和问题清单。</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="invoke">
+      <h2>唤醒方式</h2>
+      <p>在 Codex 中直接说：</p>
+      <div class="prompt">调用技术商业化分析skill，帮我分析复旦大学某某教授的成果</div>
+      <p>也可以只说：</p>
+      <div class="prompt">技术商业化分析skill</div>
+      <div class="note">如果没有给出机构和学者姓名，skill 会先询问你想研究哪个机构的哪位学者。</div>
+    </section>
+
+    <section id="input">
+      <h2>推荐输入</h2>
+      <div class="grid two">
+        <div>
+          <h3>最简单输入</h3>
+          <div class="prompt">技术商业化分析skill，帮我分析复旦大学王晓阳教授的成果</div>
+        </div>
+        <div>
+          <h3>带研究重点的输入</h3>
+          <div class="prompt">技术商业化分析skill，帮我分析某机构某学者近十年的成果。
+重点关注 AI、数据安全和金融科技方向，输出 Excel 和 HTML。</div>
+        </div>
+      </div>
+      <h3>带商业假设的输入</h3>
+      <div class="prompt">我认为第 3、8、15 篇成果可能有商业化机会，请重点分析它们是否适合做产品。</div>
+    </section>
+
+    <section id="workflow">
+      <h2>工作流程</h2>
+      <div class="flow">
+        <div class="step">
+          <div class="num">1</div>
+          <h3>身份确认</h3>
+          <p>确认学者身份、机构、姓名变体、公开主页和学术索引。</p>
+        </div>
+        <div class="step">
+          <div class="num">2</div>
+          <h3>成果清洗</h3>
+          <p>抓取论文列表，去重，记录来源、DOI、arXiv 或公开链接。</p>
+        </div>
+        <div class="step">
+          <div class="num">3</div>
+          <h3>逐篇解释</h3>
+          <p>生成专业摘要、通俗解释、应用场景和证据置信度。</p>
+        </div>
+        <div class="step">
+          <div class="num">4</div>
+          <h3>方向与时间线</h3>
+          <p>聚类研究方向，整理十年演化、近期转向和关键节点。</p>
+        </div>
+        <div class="step">
+          <div class="num">5</div>
+          <h3>可选深挖</h3>
+          <p>用户可选择论文编号并补充商业假设；不选择也会继续整体分析。</p>
+        </div>
+        <div class="step">
+          <div class="num">6</div>
+          <h3>商业化分析</h3>
+          <p>分析客户、痛点、产品形态、build-vs-buy 风险和建议。</p>
+        </div>
+        <div class="step">
+          <div class="num">7</div>
+          <h3>商业对标</h3>
+          <p>形成国内外商业化公司对标或空白判断。</p>
+        </div>
+        <div class="step">
+          <div class="num">8</div>
+          <h3>访谈清单</h3>
+          <p>生成面向技术经理人的学者访谈问题清单。</p>
+        </div>
+      </div>
+      <div class="note">第 5 步是唯一建议用户介入的步骤：选择想深挖的成果编号，商业假设可填也可不填。</div>
+    </section>
+
+    <section id="deliverables">
+      <h2>主要交付物</h2>
+      <p>默认交付物以 Excel 为主，可同时生成可读性强的 HTML 或 Word。</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Sheet / Section</th>
+            <th>用途</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><span class="tag">Overview</span></td><td>总体一览：身份、时间窗、成果数量、主要方向和关键 caveat。</td></tr>
+          <tr><td><span class="tag">Paper Browser</span></td><td>逐篇论文清单、专业摘要、通俗解释、应用场景和证据置信度。</td></tr>
+          <tr><td><span class="tag">Directions</span></td><td>研究方向聚类、代表论文、核心能力、产业痛点和产品化潜力。</td></tr>
+          <tr><td><span class="tag">Timeline</span></td><td>十年研究演化、近期转向和关键节点。</td></tr>
+          <tr><td><span class="tag">Deep Dives</span></td><td>用户选择论文的深入商业假设判断。</td></tr>
+          <tr><td><span class="tag">Commercialization</span></td><td>商业化机会、客户、产品形态、竞争压力、落地建议。</td></tr>
+          <tr><td><span class="tag">Benchmarks</span></td><td>国内外商业化公司对标或空白，包括平台功能和开源替代。</td></tr>
+          <tr><td><span class="tag">Interview Questions</span></td><td>技术经理人与学者访谈的问题清单。</td></tr>
+          <tr><td><span class="tag">Sources</span></td><td>来源链接、证据记录和已知限制。</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="style">
+      <h2>输出风格</h2>
+      <div class="grid two">
+        <div class="card">
+          <h3>面向技术经理人</h3>
+          <p>不默认用户具备论文所属领域的深度技术背景。主问题围绕商业判断、需求资源诊断、成熟度、公司设计和运营治理。</p>
+        </div>
+        <div class="card">
+          <h3>商业化优先</h3>
+          <p>优先回答谁有痛点、为什么现在需要、谁付费、客户会自建还是购买、还缺什么资源。</p>
+        </div>
+        <div class="card">
+          <h3>技术作为证据</h3>
+          <p>技术细节主要作为证据和追问，不作为访谈主轴。必要时把算法名转译成买方能理解的问题。</p>
+        </div>
+        <div class="card">
+          <h3>标注不确定性</h3>
+          <p>对证据不足的结论标注置信度，避免把论文原型过度包装成成熟产品。</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="limits">
+      <h2>使用注意</h2>
+      <ul>
+        <li>现代论文、公司、政策和市场信息会变化，运行时应联网核验最新资料。</li>
+        <li>不绕过付费墙，只下载开放论文或作者公开版本。</li>
+        <li>如果公开摘要或全文不足，逐篇分析会标注较低证据置信度。</li>
+        <li>交付物适合做前期研判和访谈准备，不替代正式法律、财务、知识产权或投资尽调。</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">TechCommercialization / professor-commercialization-research</div>
+  </footer>
+</body>
+</html>
