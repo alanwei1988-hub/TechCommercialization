@@ -78,6 +78,7 @@ If the user already provides the institution and scholar, start the workflow wit
    - Verify paper counts, downloaded PDF counts, source links, and date range.
    - Check that every included paper has both technical and plain-language summaries.
    - Check that the interview question list is specific to the scholar's research rather than generic.
+   - For HTML deliverables, check table layout: compact identifier columns, give analysis/plain-language columns enough width, and ensure sticky headers or anchors do not cover content.
    - Browse for current market, company, policy, or regulatory facts; cite sources.
    - Flag confidence levels and avoid overstating commercial readiness.
 

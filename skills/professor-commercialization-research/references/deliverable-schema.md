@@ -151,6 +151,8 @@ The questions must be specific to the scholar's actual research directions and c
 
 HTML must be readable as a standalone report, with tables, anchors, filters, or section navigation when the corpus is large.
 
+For large paper browser tables, use a reader-first layout: keep identifier fields (`#`, year, title, source, direction, signal) compact and allocate the most horizontal space to `Analysis Summary` and `Plain-Language Explanation and Application Scenarios`. Use explicit column widths or a `colgroup`; avoid letting long titles or venue names dominate the table. Keep sticky headers scoped to the table's own scroll container.
+
 ## Word report structure
 
 - Executive summary
@@ -169,3 +171,4 @@ HTML must be readable as a standalone report, with tables, anchors, filters, or 
 - Label inference clearly.
 - Avoid "promising" language unless the evidence supports product readiness.
 - Prefer "possible wedge" or "requires validation" for early-stage ideas.
+- For HTML, verify at a normal desktop width that no table columns are wastefully wide, no important narrative columns are squeezed, and sticky headers or nav bars do not cover content.

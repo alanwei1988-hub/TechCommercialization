@@ -100,5 +100,6 @@ When analyzing a user-selected paper or hypothesis:
 - Confirm all counts match between metadata, workbook/report, and downloaded files.
 - Check hyperlinks and local file paths.
 - Confirm the interview question list is specific, uses plain language, and maps back to the analysis.
+- For HTML reports, inspect table ergonomics: title/source columns should not crowd out analysis and plain-language columns; sticky headers must not cover the first row or anchor targets.
 - Re-run generation scripts when source data changes.
 - Include a short "known limits" section: missing PDFs, uncertain authorship, market facts needing refresh, or thin evidence.
