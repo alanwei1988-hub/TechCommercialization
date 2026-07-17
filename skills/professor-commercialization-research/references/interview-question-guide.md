@@ -1,25 +1,35 @@
 # Targeted Scholar Interview Question Guide
 
-Use this guide to generate a tailored interview question list for a technical manager speaking with a scholar about research commercialization.
+Use this guide to generate a tailored interview question list for an MBA-trained generalist consultant or innovation manager speaking with a scholar about research commercialization.
 
 The source reference is a general project-interview framework. Do not copy its title or background by default. Preserve the useful flow, then personalize the questions with the skill's analysis outputs.
 
-Default posture: write for a technical manager who is responsible for commercialization analysis and project design, but may not be deep in the scholar's technical field. The interview should help them decide what to do next, not prove technical mastery.
+## Contents
+
+1. Inputs
+2. Output principles
+3. Business-manager-first framing
+4. Recommended sections
+5. PPT placement and working fields
+6. Tailoring rules
+7. Quality check
+
+Default posture: write for a commercially trained generalist who is responsible for commercialization analysis and project design but does not know the scholar's technical field. The interview should help them decide what to do next, not prove technical mastery.
 
 ## Inputs
 
 Use these artifacts before drafting questions:
 
-- `Paper Browser`: numbered papers, plain-language explanations, application scenarios, commercial relevance.
-- `Directions`: research clusters, representative papers, core capability, limits.
-- `Timeline`: key nodes and recent pivots.
-- `Deep Dives`: user hypotheses, evidence judgments, rewritten product framing.
-- `Commercialization`: target customers, product forms, build-vs-buy risk, readiness.
-- `Benchmarks`: domestic and international commercial-company peers, adjacent platform products, open-source substitutes, or explicit white spaces.
+- Excel `Paper List`: numbered papers, plain-language explanations, application scenarios, commercial relevance, and known limits.
+- Excel `Selected Evidence`: the claims, evidence types, confidence, counterevidence, and next validation used in the PPT.
+- Excel `Directions & Timeline`: research clusters, representative papers, core capabilities, key nodes, and recent pivots.
+- Preliminary 商业化分析 PPT: Lead Wedge, opportunity scores, customer problem, product form, commercialization vehicle, killer risks, and 30/60/90-day plan.
+- Selected deep dives: user hypotheses, evidence judgments, rewritten product framing, and missing work.
+- Market scan: direct and adjacent companies, platform products, open-source substitutes, service providers, current customer solutions, or explicit white spaces.
 
 ## Output principles
 
-- Write for an entry-level technical manager preparing a 45-60 minute scholar interview.
+- Write for an MBA-level generalist preparing a 45-60 minute scholar interview.
 - Make the question spine commercial and operational, not technical. Use the analysis to ask about customer pain, demand evidence, resource gaps, maturity, company design, operating role, governance, and next-step consulting actions.
 - Make questions natural, respectful, and conversational; avoid sounding like an audit checklist.
 - Prefer plain Chinese unless the user asks for another language.
@@ -28,6 +38,9 @@ Use these artifacts before drafting questions:
 - Do not overclaim product readiness. Ask questions that reveal maturity, ownership, customer pull, and missing proof.
 - Mark each question as `Must ask`, `If time`, or `Optional`.
 - Avoid question wording that assumes the manager already understands a named algorithm, benchmark, architecture, or paper. Prefer "这类成果解决的客户问题是什么" over "某某算法离工程产品还有哪些接口缺口".
+- Put at most two or three questions that directly change the requested decision on the final core slide.
+- Put six to eight `Must ask` questions and the complete prioritized question list in PPT appendix slides or speaker notes when supported.
+- Do not add a default `Interview Questions` sheet to the 论文列表 Excel; keep Excel focused on papers and evidence traceability.
 
 ## Business-manager-first framing
 
@@ -172,21 +185,15 @@ Question patterns:
 - "还有哪些成果或限制，是我们从论文和公开资料里看不到、但做商业化判断时必须知道的？"
 - "我们后续会把访谈内容整理成一页纸建议或更新版商业化分析，有没有哪些内容需要保密或避免写入对外材料？"
 
-## Recommended table fields
+## PPT placement and working fields
 
-Use these fields in Excel or Word:
+Use three levels of question detail:
 
-- Section
-- Priority
-- Question
-- Follow-up Prompt
-- Why Ask This
-- Analysis Basis
-- Expected Signal
-- Related Paper # or Direction
-- Notes During Interview
+- **Final core slide**: at most two or three questions that directly change the requested decision.
+- **Appendix**: six to eight `Must ask` questions plus the full prioritized list, with concise evidence basis and expected signal.
+- **Speaker notes**: natural follow-ups, sensitive wording, source context, and transition cues when notes are supported.
 
-For non-specialist technical-manager deliverables, prefer these labels when space allows:
+Keep these fields in the structured analysis source even when they are not all visible on slides:
 
 - Module
 - Priority
@@ -196,7 +203,10 @@ For non-specialist technical-manager deliverables, prefer these labels when spac
 - Evidence From Analysis
 - Expected Signal / Decision Use
 - Related Direction or Paper #
+- Decision Changed
 - Notes During Interview
+
+On the main slide, show only the question and a short `what this answer changes` cue. Avoid a dense questionnaire table.
 
 ## Tailoring rules
 
@@ -216,4 +226,4 @@ Before finalizing, verify:
 - Sensitive questions about IP, role commitment, valuation, and equity are phrased gently.
 - Every section has a practical purpose.
 - At least half of the questions are visibly customized to the scholar's actual research, not generic technology-transfer questions.
-- A non-specialist technical manager can ask the main questions without first understanding the paper's algorithms.
+- An MBA-level generalist can ask the main questions without first understanding the paper's algorithms.

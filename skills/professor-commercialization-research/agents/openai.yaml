@@ -1,6 +1,4 @@
 interface:
   display_name: "技术商业化分析"
-  short_description: "从论文梳理到商业化判断、对标和访谈问题清单。"
-  default_prompt: "Use $professor-commercialization-research（技术商业化分析skill）分析某机构某位学者的论文、科研方向和商业化机会。"
-policy:
-  allow_implicit_invocation: true
+  short_description: "先看研究全景，再生成可直接与学者交流的商业化分析。"
+  default_prompt: "Use $professor-commercialization-research to map a scholar's research and influence, prioritize commercialization directions, and deliver a scholar-shareable, management-readable 商业化分析 PPT plus a traceable 论文列表 Excel."
